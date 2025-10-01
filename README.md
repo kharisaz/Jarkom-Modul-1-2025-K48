@@ -31,4 +31,14 @@ Pada soal ini, kita diminta untuk packet sniffing antara manwe dan eru, dimana d
 
 Pada soal ini, kita diminta untuk membuat dan konfigurasi FTP server di eru, membuat directory shared, dan membuat 2 user ainur dengan hak akses write&read dan melkor tanpa hak akses sama sekali 
 
--pertama, kita perlu install FTP 
+- Pertama, kita perlu install FTP di console Eru
+```
+ apt update && apt install vsftp -y
+```
+
+- Kedua, kita buat folder untuk masing masing user
+```
+  mkdir -p /srv/ftp/shared
+  mkdir -p /home/melkor_ftp
+```
+
