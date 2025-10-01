@@ -1,4 +1,9 @@
 # Laporan Resmi Praktikum Jarkom Modul 1
+
+| Nama Anggota | NRP |
+|--------------|-----|
+|Khumaidi Kharis A. | 5027241049|
+|Nadia Fauiazahra K. | 5027241094|
 #nomor 1-5 mengikuti modul
 
 --penjelasan dikit
