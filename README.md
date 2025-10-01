@@ -1,4 +1,4 @@
-## Laporan Resmi Praktikum Jarkom Modul 1
+# Laporan Resmi Praktikum Jarkom Modul 1
 
 | Nama Anggota | NRP |
 |--------------|-----|
@@ -6,11 +6,11 @@
 |Nadia Fauziazahra K. | 5027241094|
 
 
-# nomor 1-5 mengikuti modul
+## nomor 1-5 mengikuti modul
 
 --penjelasan dikit
 
-# Nomor  6
+## Nomor  6
 
 Pada soal ini, kita diminta untuk packet sniffing antara manwe dan eru, dimana dengan menjalankan file traffic.sh 
 
