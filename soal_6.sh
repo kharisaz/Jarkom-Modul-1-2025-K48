@@ -2,3 +2,5 @@ wget --no-check-certificate https://docs.google.com/uc?export=download&id=1bE3kF
 ./traffic.zip
 chmod +x traffic.sh
 ./traffic.sh
+
+#buka wireshark dan display filter alamat ip manwe
