@@ -8,13 +8,92 @@
 
 ## nomor 1
 
+Pada soal ini, kita membuat topologi jaringan dengan eru sebagai router dan 4 node sebagai client (Melkor, Manwe, Verda, dan Ulmo) serta menambah dua switch, yakni:
+
+switch 1 -> Melkor dan Manwe
+
+switch 2 -> Varda dan Ulmo
+
 ## nomor 2
+
+Pada soal ini, kita perlu configurasi eru agar bisa connect ke internet. Edit network configuration eru dan tambahkan code berikut,
+
+        auto eth0
+        iface eth0 inet dhcp
 
 ## nomor 3
 
+Soal ini memastikan agar client dapat terhubung satu sama lain. Kita perlu setup konfigurasi di semua node. Tambahkan code berikut,
+
+[ERU]
+
+        auto eth1
+        iface eth1 inet static
+        	address 192.235.1.1
+        	netmask 255.255.255.0
+        
+        auto eth2
+        iface eth2 inet static
+        	address 192.235.2.1
+        	netmask 255.255.255.0
+                
+[MELKOR]
+
+        auto eth0
+        iface eth0 inet static
+        	address 192.235.1.2
+        	netmask 255.255.255.0
+        	gateway 192.235.1.1
+
+[MANWE]
+
+        auto eth0
+        iface eth0 inet static
+        	address 192.235.1.3
+        	netmask 255.255.255.0
+        	gateway 192.235.1.1
+
+[VARDA]
+
+        auto eth0
+        iface eth0 inet static
+        	address 192.235.2.2
+        	netmask 255.255.255.0
+        	gateway 192.235.2.1
+
+[ULMO]
+
+        auto eth0
+        iface eth0 inet static
+        	address 192.235.2.3
+        	netmask 255.255.255.0
+        	gateway 192.235.2.1
+
 ## nomor 4
 
+Pada soal ini, kita perlu membuat semua client dapat terhubung dengan internet. Berikut code yang digunakan untuk bisa tersambung internet.
+
+-code untuk eru
+
+        apt update && apt install iptables -y
+        iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.235.0.0/16
+
+-code untuk semua client
+
+        echo nameserver 192.168.122.1 > /etc/resolv.conf
+
 ## nomor 5
+
+Pada soal iini, kita ditugaskan untuk menyimpan code agar tidak hilang saat semua node direstart. Kita perlu menyimpan code du network configuration dan menambahkan command "up" pada code seperti nomor 5. command tersebut bertujuan agar otomatis menjalankn script tersebut tanpa melakukan manual di terminal.
+
+-code eru 
+        
+        up apt update && apt install iptables -y
+        up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.235.0.0/16
+
+-code client
+
+        up echo nameserver 192.168.122.1 > /etc/resolv.conf
 
 ## Nomor  6
 
